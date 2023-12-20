@@ -1,113 +1,144 @@
-import Image from 'next/image'
-
+import Image from "next/image";
+import Wrap from "./components/Wrap";
+import { Button, buttonVariants } from "./components/ui/button";
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
+    <>
+      <Wrap className="w-full flex flex-col mx-auto justify-center items-center mt-28 mb-12 sm:mt-40 text-center">
+        <div className="shadow-lg bg-white text-black p-2 px-4 rounded-full backdrop-blur border border-gray-200 transition-all max-w-fit">
+          <p>Quill is now public</p>
+        </div>
+        <h1 className="max-w-4xl text-5xl md:text-6xl font-bold lg:text-7xl mt-8 md:mt-10">
+          Chat with your <span className="text-blue-600">documents</span> in
+          seconds.
+        </h1>
+        <p className="mt-8 text-zinc-700/60 md:mt-16 max-w-xl">
+          Quill allows you to have conversations with any PDF document. Simply
+          upload you file and start asking question right away.
         </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+        <Link
+          className={buttonVariants({
+            size: "lg",
+            className: "mt-6",
+          })}
+          href="/dashboard"
+          target="_blank"
+        >
+          Get started <ArrowRight className="ml-2 h-5 w-5" />
+        </Link>
+      </Wrap>
+      <div>
+        <div className="relative isolate">
+          {/*Section background */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
           >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+            <div
+              style={{
+                clipPath:
+                  "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
+              }}
+              className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
             />
-          </a>
+          </div>
+          {/*image section and border of image style*/}
+          <div>
+            <div className="mx-auto max-w-6xl px-6 lg:px-8">
+              <div className="mt-16 flow-root sm:mt-24">
+                <div className="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4">
+                  <Image
+                    src="/dashboard-preview.jpg"
+                    alt="product preview"
+                    width={1364}
+                    height={866}
+                    quality={100}
+                    className="rounded-md bg-white p-2 sm:p-8 md:p-20 shadow-2xl ring-1 ring-gray-900/10"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+          >
+            <div
+              style={{
+                clipPath:
+                  "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
+              }}
+              className="relative left-[calc(50%-13rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-36rem)] sm:w-[72.1875rem]"
+            />
+          </div>
         </div>
       </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <div className="mt-16 md:mt-32 p-8 pb-16">
+        <div className="md:flex flex-col items-center justify-center">
+          <h2 className="font-bold text-4xl md:text-6xl">
+            Start chatting in minutes
+          </h2>
+          <p className="text-zinc-700/60 mt-4 md:mt-6 md:text-center">
+            Chatting to your PDF files has never been easier than with Quill
+          </p>
+        </div>
+        <div className="mt-16 md:mt-32 space-y-10 md:space-y-0 md:space-x-14 md:flex items-center justify-center">
+          <ol>
+            <li className="space-y-2  md:border-t border-slate-700/40 pt-4">
+              <span className="text-blue-600 text-md font-medium">Step 1</span>
+              <h2 className="text-xl md:text-2xl">Sign up for an account</h2>
+              <p className="text-zinc-700/60 md:max-w-xs">
+                Either starting out with a free plan or choose our{" "}
+                <Link
+                  className="text-blue-600 underline underline-offset-2"
+                  href="/dashboard"
+                  target="_blank"
+                >
+                  pro plan
+                </Link>
+              </p>
+            </li>
+          </ol>
+          <ol>
+            <li className="space-y-2  md:border-t border-slate-700/40 pt-4">
+              <span className="text-blue-600 text-md font-medium">Step 2</span>
+              <h2 className="text-xl md:text-2xl">Upload your PDF file</h2>
+              <p className="text-zinc-700/60 md:max-w-xs">
+                We'll precess your file and make it ready for you to chat with.{" "}
+              </p>
+            </li>
+          </ol>{" "}
+          <ol>
+            <li className="space-y-2  md:border-t border-slate-700/40 pt-4">
+              <span className="text-blue-600 text-md font-medium">Step 3</span>
+              <h2 className="text-xl md:text-2xl">Start asking questions</h2>
+              <p className="text-zinc-700/60 md:max-w-xs">
+                it's that simple. Try out Quill today - it really takes less
+                that a minute.{" "}
+              </p>
+            </li>
+          </ol>
+        </div>
       </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      <div>
+        <div className="mx-auto max-w-6xl px-6 lg:px-8 pb-16">
+          <div className="mt-0 flow-root sm:mt-24">
+            <div className="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4">
+              <Image
+                src="/file-upload-preview.jpg"
+                alt="product preview"
+                width={1364}
+                height={866}
+                quality={100}
+                className="rounded-md bg-white p-2 sm:p-8 md:p-20 shadow-2xl ring-1 ring-gray-900/10"
+              />
+            </div>
+          </div>
+        </div>
       </div>
-    </main>
-  )
+    </>
+  );
 }
