@@ -10,6 +10,7 @@ const nextConfig = {
       process.env.KINDE_POST_LOGIN_REDIRECT_URL ??
       `https://${process.env.VERCEL_URL}/dashboard`,
   },
+  swcMinify: true,
 };
 
 module.exports = nextConfig;
